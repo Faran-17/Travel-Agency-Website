@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registeration</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <style>
+        body{
+            text-align: center;
+            background-image: url("https://images.unsplash.com/photo-1523821741446-edb2b68bb7a0?ixlib=rb-1.2.1&w=1000&q=80");
+            background-size: cover;
+        }
+    </style>
+    <form action="register" method="POST">
+        {% csrf_token %}
+        
+        <br>
+        <input type="text" name="first_name" placeholder="First Name"><br>
+        <br>
+        <input type="text" name="last_name" placeholder="Last Name"><br>
+        <br>
+        <input type="text" name="username" placeholder="Username"><br>
+        <br>
+        <input type="text" name="email" placeholder="Email"><br>
+        <br>
+        <input type="password" name="password1" placeholder="Password"><br>
+        <br>
+        <input type="password" name="password2" placeholder="Confirm Password"><br>
+        <br>
+        <input type="Submit">
+    
+    </form>
+
+    <div>
+        {% for message in messages %}
+        <h3> {{messages}} </h3>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Login</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <style>
+        body{
+            text-align: center;
+            background-image: url("https://i.pinimg.com/originals/3c/9e/50/3c9e50020395f447932c74788293bc2a.jpg");
+            background-size: cover;
+        }
+    </style>
+    <form action="login" method="POST">
+        {% csrf_token %}
+        <br>
+        <input type="text" name="username" placeholder="Enter username"><br>
+        <br>
+        <input type="password" name="password" placeholder="Enter password"><br>
+        <br>
+        <input type="Submit">
+    </form>
+
+    <div>
+        {% for message in messages %}
+        <h3> {{messages}} </h3>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
